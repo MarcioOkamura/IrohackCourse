@@ -1,73 +1,87 @@
 <img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
 
-# Title of My Project
-*[Your Name]*
+# Preço e Demanda de Comodities 
+# <i>Serie Temporal</i>
 
-*[Your Cohort, Campus & Date]*
+* Marcio R. Okamura*
 
-## Content
-- [Project Description](#project-description)
-- [Hypotheses / Questions](#hypotheses-/-questions)
+* DAPT64 - NOV21, Sao Paulo, 07 de Maio de 2022 *
+
+## Conteudo
+- [Descriçao do Projeto](#project-description)
+- [Hipotese e questionamentos](#hypotheses-/-questions)
 - [Dataset](#dataset)
-- [Cleaning](#cleaning)
-- [Analysis](#analysis)
-- [Model Training and Evaluation](#model-training-and-evaluation)
-- [Conclusion](#conclusion)
-- [Future Work](#future-work)
+- [Mineraçao dos Dados](#cleaning)
+- [Analises](#analysis)
+- [Modelo de treinamento e Avaliaçoes](#model-training-and-evaluation)
+- [Conclusao](#conclusion)
+- [Próximos passos](#future-work)
 - [Workflow](#workflow)
-- [Organization](#organization)
+- [Organizaçao do Projeto](#organization)
 - [Links](#links)
 
 <a name="project-description"></a>
 
-## Project Description
-Write a short description of your project: 3-5 sentences about what your project is about, why you chose this topic (if relevant), and what you are trying to show. 
+## Descriçao do Projeto
+Este projeto deseja ter uma aproximaçao dos preços e/ou demanda das comodities comercializadas pelo Brasil dada a guerra na Ucrania.
 
 <a name="hypotheses-/-questions"></a>
 
-## Hypotheses / Questions
-* What data/business/research/personal question you would like to answer? 
-* What is the context for the question and the scientific or business application? 
-* What are the hypotheses you would like to test in order to answer your question?  
-Frame your hypothesis with statistical/data language (i.e. define Null and Alternative Hypothesis). You can use formulas if you want but that is not required.
+## Hipoteses e questionamentos
+* Qual o comportamento do preço das comodities versus alguns dos insumos? 
+* Com tudo mais constante, como se comportara o preço das comodities? 
+* Qual o impacto da guerra para o preço das comodities?
+* Qual a expectativa de preço com a guerra?  
 
 <a name="dataset"></a>
 
 ## Dataset
-* Where did you get your data? If you downloaded a dataset (either public or private), describe where you downloaded it and include the command to load the dataset.
-* Did you build your own datset? If so, did you use an API? If so, provide the scripts in your repo.
-* For all types of datasets, provide a description of the size, complexity, and data types included in your dataset, as well as a schema of the tables if necessary.
-* If the question cannot be answered with the available data, why not? What data would you need to answer it?
+* A principio este estudo utiliza a base de dados de comercio exterior disponibilizado pelo governo brasileiro:
+https://www.gov.br/produtividade-e-comercio-exterior/pt-br/assuntos/comercio-exterior/estatisticas/base-de-dados-bruta 
 
 <a name="cleaning"></a>
 
-## Cleaning
-Describe your full process of data wrangling and cleaning. Document why you chose to fill missing values, extract outliers, or create the variables you did, etc, as well as your thinking process.
+## Mineraçao dos Dados
+Os dados para analise correspondem a somente 3 categoria de toda importaçao e exportaçao do Brasil:
+* Petroleo
+* Fertilizantes
+* Graos e derivados
+
+Com estas 3 categorias iniciamos a obtençao da relaçao entre elas para determinaçao do preco do graos por kilo exportado, neste primeiro estagio indifere se houve ou nao houve algum beneficiamento do grao para exportaçao.
+
+Construida a relaçao entre as variaveis, agrega-se a informaçao dos paises em questao (Russia e Ucrania) para que seja possivel mensurar o impacto destes dos pais para a produçao nacional
+
+Inicia-se a construçao do modelo final
 
 <a name="analysis"></a>
 
-## Analysis
-* Overview the general steps you will go through to analyze your data in order to test your hypothesis.
-* Document each step of your data exploration and analysis.
-* Include charts to demonstrate the effect of your work. 
-* If you use ML in your final project, describe your feature selection process.
+## Analises
+Nos primeiros passos nao se encontra sazionalidade na importaçao do petroleo, entretanto para a importaçao dos fertilizantes e exportaçao dos graos temos uma janela de 12 meses.
+
+Após a primeira constataçao se buscou a relaçao das tres variaveis deslocando no tempo as variaveis "input", aqui temos o primeiro output que a variaçao do preco do petroleo nos ultimos 6 meses e a variaçao do preco dos fertilizantes nos ultimos 3 meses tem o "mesmo comportamento"
+
+Dado este primeiro "output" buscamos como os insumos compoe o preço final, para obter um modelo compreensivel se utilizou un PLS.
+
+Com segundo "output", buscamos introduzir a variavel pais para que tenhamos a relaçao destes paises no preco final, onde encontramos uma alta relaçao com a Russia em virtude da alta participaçao na importaçao dos insumos 
+
+A etapa de analise exploratoria foi muito rica para interpretaçao dos resultados.
 
 <a name="model-training-and-evaluation"></a>
 
-## Model Training and Evaluation
+## Modelo de treinamento e Avaliaçoes
 *Include this section only if you chose to include ML in your project.*
 * Describe how you trained your model, the results you obtained, and how you evaluated those results.
 
 <a name="conclusion"></a>
 
-## Conclusion
+## Conclusao
 * Summarize your results. What do they mean?
 * What can you say about your hypotheses?
 * Interpret your findings in terms of the human-understandable question you try to answer.
 
 <a name="future-work"></a>
 
-## Future Work
+## Próximos passos
 Address any questions you were unable to answer, or any next steps or future extensions to your project.
 
 <a name="workflow"></a>
@@ -78,7 +92,7 @@ How will you test the success of your analysis or algorithm?
 
 <a name="organization"></a>
 
-## Organization
+## Organizaçao do Projeto
 How did you organize yourself? Did you use any tools?
 
 <a name="links"></a>
