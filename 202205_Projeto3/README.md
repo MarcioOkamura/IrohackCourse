@@ -3,9 +3,9 @@
 # Preço e Demanda de Comodities 
 # <i>Serie Temporal</i>
 
-* Marcio R. Okamura*
+* Marcio R. Okamura
 
-* DAPT64 - NOV21, Sao Paulo, 07 de Maio de 2022 *
+* DAPT64 - NOV21, Sao Paulo, 07 de Maio de 2022 
 
 ## Conteudo
 - [Descriçao do Projeto](#project-description)
@@ -16,9 +16,6 @@
 - [Modelo de treinamento e Avaliaçoes](#model-training-and-evaluation)
 - [Conclusao](#conclusion)
 - [Próximos passos](#future-work)
-- [Workflow](#workflow)
-- [Organizaçao do Projeto](#organization)
-- [Links](#links)
 
 <a name="project-description"></a>
 
@@ -69,37 +66,36 @@ A etapa de analise exploratoria foi muito rica para interpretaçao dos resultado
 <a name="model-training-and-evaluation"></a>
 
 ## Modelo de treinamento e Avaliaçoes
-*Include this section only if you chose to include ML in your project.*
-* Describe how you trained your model, the results you obtained, and how you evaluated those results.
+O modelo incia com a relacao temporal de cada variavel e relacao entre elas. Umas vez definido o primeiro output, o modeo consiste em um PLS para que seja interpretavel e se obtenha as variaveis que melhor descreve o preço dos graos.
+
+Uma vez que se obtem este modelo, abrimos cada uma das variaveis em Russia, Ucrania e Outros paises para verificarmos se ha ou nao ha diferenca dos modelos.
+
+Neste caso no se observou grandes variacoes.
+
+Por fim a criaçao de cenarios para avaliarmos o impacto da guerra da Ucrania para o preço em USD das comodities brasileiras, para isto utilizamos esta planilha para descrever os cenarios:
+https://docs.google.com/spreadsheets/d/1a31oy4yINquYtl9WaQD-K2JZ72c1_4tolLv5-SJ_vQY/edit?usp=sharing
+
+Esta planilha define um cenario baseado em 4 variaveis:
+* Final da guerra
+* Aumento do consumo de petroleo
+* Aumento do consumo de fertilizantes
+* Aumento da exportaçao
+
+Dado este cenario tivemos uma resultado contra intuitivo que o preço tende a baixar, baseado nas variaveis que estamos analisando, ou seja, a analise descreve que ha outras variaveis que nao estao sendo capturadas pelo modelo que possivel fara com que haja outras relacoes para composiçao dos preços.
 
 <a name="conclusion"></a>
 
 ## Conclusao
-* Summarize your results. What do they mean?
-* What can you say about your hypotheses?
-* Interpret your findings in terms of the human-understandable question you try to answer.
+O resultado permite atribuir algumas conclusoes, como:
+* A possibilidade de uma aumento do consumo de graos no mercado interno (caso o USD se mantenha em R$4.60,
+* Caso contrario o volume de exportaçao será mais vantajoso embora o preço reduza (em USD),
+* Há a possibilidade do governo brasileiro aumentar ou reduzir as aliquotas de exportaçao para controle do IPCA15 (inflaçao),
+* Adoçao de novas tecnologias "caras" que em escala sejam mais vantajosa caso haja aumento na utilizaçao.
+
 
 <a name="future-work"></a>
 
 ## Próximos passos
-Address any questions you were unable to answer, or any next steps or future extensions to your project.
+Como proximos passos, será necessario buscar novas variaveis que permita uma descriçao melhor do modelo e menores erros, com isto buscar ter outras respostas de negocios como cenarios de aumento de area plantada ou introduçao de novas tecnologias para aumento da produçao.
 
-<a name="workflow"></a>
-
-## Workflow
-Outline the workflow you used in your project. What were the steps?
-How will you test the success of your analysis or algorithm?
-
-<a name="organization"></a>
-
-## Organizaçao do Projeto
-How did you organize yourself? Did you use any tools?
-
-<a name="links"></a>
-
-## Links
-Include the links to your repository, slides and trello. Feel free to include any other links associated to your project. 
-
-[Repository](https://github.com/)  
-[Slides](https://slides.com/)  
-[Trello](https://trello.com/en)  
+Analisar outros impactos macro economicos que permita tirar novas relacoes e estudos
